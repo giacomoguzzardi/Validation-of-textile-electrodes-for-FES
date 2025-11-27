@@ -31,9 +31,9 @@ print("Processed CSVs will go to:", PROCESSED_DIR)
 
 # --- list of files to load ---
 TO_LOAD = [
-    'LIST0423.CSV',  # hydrogel baseline (you pasted)
-    'LIST0424.CSV',  # electrode after wash (you pasted)
-    'LIST0009.CSV',  # textile baseline (used in scripts)
+    'LIST0423.CSV',  # hydrogel baseline 
+    'LIST0424.CSV',  # electrode after wash 
+    'LIST0009.CSV',  # textile baseline 
     'LIST0022.CSV',  # washing cycle example (2)
     'LIST0032.CSV',  # washing cycle example (4/6...)
     'LIST0042.CSV',  # washing cycle example
@@ -193,4 +193,5 @@ print("Saved figure:", fig2.name)
 plt.show()
 
 print("\nDone. Check the 'processed' and 'figures' folders for outputs.")
+
 
