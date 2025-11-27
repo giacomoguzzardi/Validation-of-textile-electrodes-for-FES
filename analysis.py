@@ -29,13 +29,13 @@ print("Data folder:", DATA_DIR)
 print("Figures will go to:", FIG_DIR)
 print("Processed CSVs will go to:", PROCESSED_DIR)
 
-# --- list of files to load (edit here only if you want different names) ---
+# --- list of files to load ---
 TO_LOAD = [
     'LIST0423.CSV',  # hydrogel baseline (you pasted)
     'LIST0424.CSV',  # electrode after wash (you pasted)
     'LIST0009.CSV',  # textile baseline (used in scripts)
     'LIST0022.CSV',  # washing cycle example (2)
-    'LIST0032.CSV',  # washing cycle example (4/6...) adjust if names differ
+    'LIST0032.CSV',  # washing cycle example (4/6...)
     'LIST0042.CSV',  # washing cycle example
     'LIST0052.CSV',  # washing cycle example
     'LIST0096.CSV'   # washing cycle example
@@ -55,7 +55,7 @@ def read_lcr_csv_lcr6300(path: Path, num_freq: int = 10, trim_first_n: int = Non
     with open(path, 'r', encoding='utf8', errors='ignore') as f:
         lines = [ln.rstrip('\n') for ln in f]
 
-    # find header line (where columns are listed)
+    # find header line 
     header_idx = None
     for i, ln in enumerate(lines[:40]):
         if col_name in ln:
@@ -150,7 +150,7 @@ for name, vec in loaded.items():
     out.to_csv(out_fn, index=False)
     print("Saved processed:", out_fn.name)
 
-# --- Plot 1: hydrogel vs a selected textile (if hydrogel present) ---
+# --- Plot 1: hydrogel vs a selected textile ---
 plt.figure(figsize=(6,4))
 # plot hydrogel-like entries first
 plotted = set()
@@ -174,7 +174,7 @@ plt.savefig(fig1)
 print("Saved figure:", fig1.name)
 plt.show()
 
-# --- Plot 2: normalized impedance relative to baseline (first loaded item) ---
+# --- Plot 2: normalized impedance relative to baseline  ---
 baseline_key = next(iter(loaded.keys()))
 baseline = loaded[baseline_key]
 plt.figure(figsize=(7,4))
@@ -193,3 +193,4 @@ print("Saved figure:", fig2.name)
 plt.show()
 
 print("\nDone. Check the 'processed' and 'figures' folders for outputs.")
+
