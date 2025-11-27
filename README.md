@@ -5,7 +5,7 @@ Mini reproducible demo for Elastatrode™ textile electrode validation.
 ## What is in this repo
 - `project_sheet.pdf` — one-page project summary (high-level, non-sensitive).
 - `analysis.py` — Python script that parses selected LCR CSVs, computes per-frequency averages, and generates two figures.
-- `data/` — selected CSV exports from the LCR-6300 used in the demo (only a small, representative subset).
+- `Data/` — selected CSV exports from the LCR-6300 used in the demo (only a small, representative subset).
 
 
 ## How to run (local)
